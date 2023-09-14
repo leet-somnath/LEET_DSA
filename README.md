@@ -1,6 +1,6 @@
 # DATA_STRUCTURE
 
-this is the collection of dsa problems ,where i will be solving problems topic wise from 14th sep 2023
+This is the collection of dsa problems ,where i will be solving problems topic wise from 14th sep 2023
 
 Here you can find solutions for various coding/algorithmic problems and many useful resources for learning algorithms and data structures. Also, this repo will be updated with new solutions and resources from time to time.
 
