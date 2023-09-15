@@ -16,24 +16,30 @@ Output: null
 
 //method -1-->
 package Arrays.easy;
-import java.util.HashMap;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class TwoSum {
     public static void main(String args[]) {
         int[] nums = {5, 2, 6, 8, 1, 9};
         int target = 10;
-        int[] ans = findPair(nums, target);
-        System.out.println(Arrays.toString(ans));
+        List<Integer> pair = findPair(nums, target);
+        System.out.println(pair);
     }
 
-    public static int[] findPair(int[] nums, int target) {
+    public static List<Integer> findPair(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
+        List<Integer> pair = new ArrayList<>();
 
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
             if (map.containsKey(complement)) {
-                return new int[]{nums[i], complement};
+                pair.add(nums[i]);
+                pair.add(complement);
+                return pair;
             }
             map.put(nums[i], i);
         }
