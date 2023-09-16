@@ -14,7 +14,11 @@ Note that this repo is meant to be used for learning and researching purposes on
 
 ---
 
+<<<<<<< HEAD
 ##### 1.  [Arrays](https://github.com/leet-somnath/DATA_STRUCTURE/tree/main/Arrays)
+=======
+ ** 1.  [Arrays](https://github.com/leet-somnath/LEET_DSA/tree/main/Arrays)**
+>>>>>>> 4ea86766f644bb12914c438015b007c1a05e024e
 
 **2.  [Hashmap](https://github.com/leet-somnath/LEET_DSA/tree/main/Hashmap)**
 
