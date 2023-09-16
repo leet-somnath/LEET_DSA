@@ -13,7 +13,7 @@ Note that this repo is meant to be used for learning and researching purposes on
 ##### **The different categories are:-**
 
 
-##### **1.  [Arrays](https://github.com/leet-somnath/LEET_DSA/tree/main/Arrays)**
+##### ***1.  [Arrays](https://github.com/leet-somnath/LEET_DSA/tree/main/Arrays)***
 
 **2.  [Hashmap](https://github.com/leet-somnath/LEET_DSA/tree/main/Hashmap)**
 
