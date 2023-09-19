@@ -13,19 +13,25 @@ Explanation: The 5th smallest array element is 4
 */
 
 package Arrays.easy;
+
 import java.util.*;
-public class KthLargestValue {
+
+/**
+ * KthSmallestValue
+ */
+public class KthSmallestValue {
+
     public static void main(String[] args) {
-                Scanner sc = new Scanner(System.in);
-                int n = sc.nextInt();
-                int[] arr = new int[n];
-                for (int i = 0; i < arr.length; i++) {
-                    arr[i]=sc.nextInt();
-                }
-                int k = sc.nextInt();
-                //sorting
-                Arrays.sort(arr);
-                System.out.println(arr[k-1]);
-                sc.close();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int k = sc.nextInt();
+        // sorting
+        Arrays.sort(arr);
+        System.out.println(arr[k - 1]);
+        sc.close();
     }
 }
