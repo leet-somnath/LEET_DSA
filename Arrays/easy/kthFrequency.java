@@ -1,3 +1,4 @@
+package Arrays.easy;
 import java.util.*;
 public class kthFrequency {
     public static void main(String[] args) {
