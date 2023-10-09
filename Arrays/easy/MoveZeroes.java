@@ -24,13 +24,13 @@ public class MoveZeroes {
     }
 
     public static void moveZeroes(int x[]){
-        int nonzeroIndex = 0;
+       int nonzeroIndex = 0;
         for (int i = 0; i < x.length; i++) {
             if (x[i] != 0) {
                 x[nonzeroIndex] = x[i];
                 nonzeroIndex++;
             }
-        }
+        } 
         
         while (nonzeroIndex < x.length) {
             x[nonzeroIndex] = 0;
