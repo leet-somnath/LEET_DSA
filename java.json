@@ -1,0 +1,83 @@
+{
+    "syntax": {
+        "prefix": "syntax",
+        "body": [
+            "import java.util.*;",
+            " import java.io.*;",
+            "public class ${TM_FILENAME_BASE} {",
+            "\tpublic static void main(String[] args) {",
+            "Scanner sc=new Scanner(System.in);"
+            "\t\t\t\t",
+            "\t\t$1",
+            "sc.close();"
+            "\t}",
+            "}"
+        ],
+        "description": "Java template"
+    }
+    "Scanner": {
+        "prefix": "scanner",
+        "body": [
+            
+            "        Scanner sc = new Scanner(System.in);",
+            "        $1",
+           
+        ],
+        "description": "Create a Scanner object for user input"
+    }
+    "br": {
+        "prefix": "br",
+        "body": [
+            
+            " BufferedReader br = new BufferedReader(new InputStreamReader(System.in));",
+            " BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+            "
+            "        $1",
+           
+        ],
+        "description": "Create a Scanner object for user input"
+    }
+    "x": {
+        "prefix": "x",
+        "body": [
+            
+            "      int x[]=new x[m];",
+            "        $1",
+           
+        ],
+        "description": "Create a Scanner object for user input"
+    }
+    "array": {
+        "prefix": "array",
+        "body": [
+            "       int n=sc.nextInt();"
+            "       int arr[]=new int[n];",
+            "        for(int i=0;i<n;i++){ "
+              "      arr[i]=sc.nextInt();",
+           " }"
+            "        $1",
+           
+        ],
+        "description": "Create a array object for user input"
+    }
+    "map.for": {
+        "prefix": "map.for",
+        "body": [
+            "   map.forEach((key,value)->{"
+            "                            "
+               " });"  ,   " $1",
+           
+        ],
+        "description": "Create a array object for user input"
+    }
+    "util": {
+        "prefix": "util",
+        "body": [
+            
+            "     import java.util.*;",
+            "        $1",
+           
+        ],
+        "description": "Create a util object for user input"
+    }
+}
