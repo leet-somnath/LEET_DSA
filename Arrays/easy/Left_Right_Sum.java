@@ -1,3 +1,6 @@
+/**
+ * The `Left_Right_Sum` class calculates the absolute difference between the sum of elements on the left and right sides of each element in an array.
+ */
 package Arrays.easy;
 
 import java.util.*;

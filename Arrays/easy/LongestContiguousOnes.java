@@ -39,8 +39,8 @@ public class LongestContiguousOnes {
         for (int i = 0; i < x.length; i++) {
             if (x[i] == 1) {
                 count++;
-                temp = Math.max(temp, count);
             } else {
+                temp = Math.max(temp, count);
                 count = 0;
             }
         }

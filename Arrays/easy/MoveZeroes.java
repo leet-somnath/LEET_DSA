@@ -37,4 +37,21 @@ public class MoveZeroes {
             nonzeroIndex++;
         }
     }
+    public static void moveZeroes(int arr[])
+    {
+        int low=0,high=x.length-1;
+        while (low<high) {
+            if(arr[low]==0)
+            {
+                int temp=arr[low];
+                arr[low]=arr[high];
+                arr[high]=temp;
+                high--;
+            }
+            else
+            {
+                low++;
+            }
+        }
+    }
 }
