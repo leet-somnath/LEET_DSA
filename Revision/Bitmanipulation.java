@@ -1,5 +1,4 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
 
 public class Bitmanipulation {
     public static void main(String[] args) {
@@ -10,6 +9,7 @@ public class Bitmanipulation {
         // 2 binary representaion
         int n = sc.nextInt();
         binaryrepresentaion(n);
+        System.out.println();
         // 3getting ith bit
         System.out.println("index?");
         int i = sc.nextInt();
@@ -31,30 +31,30 @@ public class Bitmanipulation {
         System.out.println("value to be updated and which index??");
         int valtobeupdated = sc.nextInt();
         int idx = sc.nextInt();
-        updateithbit(num,valtobeupdated, idx);
-        //8 clear bits from i to j
+        updateithbit(num, valtobeupdated, idx);
+        // 8 clear bits from i to j
         System.out.println("from what to what position u want to clear");
         int ipos = sc.nextInt();
         int jpos = sc.nextInt();
-          clearbitsfromiTojposition(num,ipos ,jpos );
+        clearbitsfromiTojposition(num, ipos, jpos);
 
-//update bits from i to j
-System.out.println("i,j,value");
-int updfrom=sc.nextInt(),updto=sc.nextInt() ;
-int value=sc.nextInt();
-updatebitsfromitotoposition(num,updfrom,updto ,value) ;
+        // update bits from i to j
+        System.out.println("i,j,value");
+        int updfrom = sc.nextInt(), updto = sc.nextInt();
+        int value = sc.nextInt();
+        updatebitsfromitotoposition(num, updfrom, updto, value);
 
-//Check N is power of 2 or not
-System.out.println("number to check 2 powers?");
-int powcheck=sc.nextInt();
-System.out.println(n_is_power_of_two(powcheck));
+        // Check N is power of 2 or not
+        System.out.println("number to check 2 powers?");
+        int powcheck = sc.nextInt();
+        System.out.println(n_is_power_of_two(powcheck));
 
-//get msb and least bit
-System.out.println("enter a numbr for msb and lsb");
-int y=sc.nextInt();
-getmsbandlsb(y);
- 
-//
+        // get msb and least bit
+        System.out.println("enter a numbr for msb and lsb");
+        int y = sc.nextInt();
+        getmsbandlsb(y);
+
+        //
 
         sc.close();
     }
@@ -64,22 +64,20 @@ getmsbandlsb(y);
     }
 
     public static void binaryrepresentaion(int n) {
-        for (int i = 0; i < Math.log(n); i++) {
+        int maxSetBit = (int) (Math.log(n) / Math.log(2));
+        for (int i = maxSetBit; i >= 0; i--) {
             int k = 1 << i;
-            if ((n & k) > 0)
-                System.out.println(1);
+            if ((n & k) != 0)
+                System.out.print("1");
             else
-                System.out.println(0);
-
+                System.out.print("0");
         }
-
     }
 
-    public static void clearbitsfromiTojposition(int n,int i,int j)
-    {
-        int a= -1<<j+1;
-        int b= 1<<i-1;
-        n=(n &(a|b));
+    public static void clearbitsfromiTojposition(int n, int i, int j) {
+        int a = -1 << j + 1;
+        int b = 1 << i - 1;
+        n = (n & (a | b));
         System.out.println(n);
     }
 
@@ -92,21 +90,20 @@ getmsbandlsb(y);
 
     public static void updateithbit(int n, int value, int i) {
         clearithbit(n, i);
-        n= (n | (value<<i));
+        n = (n | (value << i));
         System.out.println(n);
     }
 
-    public static void getmsbandlsb(int n)
-    {
-     
-        
-        System.out.println("lsb"+ " "+ (n&1));
-        int msb = (int)(Math.log(n) / Math.log(2));
- 
+    public static void getmsbandlsb(int n) {
+
+        System.out.println("lsb" + " " + (n & 1));
+        int msb = (int) (Math.log(n) / Math.log(2));
+
         System.out.println(msb);
-       
+
     }
 
+    
     public static int count_set_bits(int n) {
         int cont = 0;
         while (n > 0) {
@@ -133,15 +130,15 @@ getmsbandlsb(y);
         n = (n & (~(1 << i)));
         System.out.println(n);
     }
-    public static void updatebitsfromitotoposition(int n,int i,int j,int value)
-    {
+
+    public static void updatebitsfromitotoposition(int n, int i, int j, int value) {
         clearbitsfromiTojposition(n, i, j);
-              n=(n& (value<<i));
-                   System.out.println("after"+n);
+        n = (n & (value << i));
+        System.out.println("after" + n);
     }
-    public static boolean n_is_power_of_two(int n)
-    {
-     return (n&(n-1))>0 ?false:true;
+
+    public static boolean n_is_power_of_two(int n) {
+        return (n & (n - 1)) > 0 ? false : true;
     }
 
 }
