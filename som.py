@@ -10,12 +10,13 @@ time.sleep(0.1)
 
 pyautogui.press("enter")
 
-# pyautogui.write("https://www.bing.com")
+# pyautogui.write("https://www.bing.com")rapes
+
 # pyautogui.press("enter")
 time.sleep(2.5)
 
+lst = ['Apple', 'Banana', 'Orange', 'Grapes', 'Strawberry', 'Blueberry', 'Watermelon', 'Pineapple', 'Mango', 'Kiwi','Peach', 'Plum', 'Cherry', 'Pear', 'Raspberry', 'Blackberry', 'Cantaloupe', 'Avocado', 'Pomegranate', 'Coconut', 'Lemon', 'Lime', 'Grapefruit', 'Papaya', 'Nectarine', 'Apricot', 'Cranberry', 'Fig', 'Guava', 'Passion Fruit','Dragon Fruit', 'Persimmon', 'Kumquat', 'Lychee', 'Pitaya', 'Jackfruit', 'Tangerine', 'Honeydew', 'Rambutan','Gooseberry', 'Mulberry', 'Elderberry', 'Clementine', 'Melon', 'Blackcurrant', 'Currant', 'Tamarillo']
 
-lst =  [  'Paris',  'New York City',  'Tokyo',  'London',  'Barcelona',  'Sydney',  'Rio de Janeiro',  'Rome',  'Amsterdam',  'Hong Kong',  'San Francisco',  'Dubai',  'Mumbai',  'Istanbul',  'Cape Town',  'Berlin',  'Singapore',  'Vienna',  'Bangkok',  'Toronto',  'Shanghai',  'Montreal',  'Seoul',  'Moscow',  'Buenos Aires',  'Los Angeles',  'Melbourne',  'Havana',  'Jerusalem',  'Zurich','hyderabad','karnataka','Andra','telangana']
 
 
 for i in lst:
@@ -27,7 +28,7 @@ for i in lst:
     
     pyautogui.press("enter")
     random_float = random.random()
-    time.sleep(random_float + 5)
+    time.sleep(random_float + 9)
     pyautogui.hotkey("ctrl", "t")
     random_float = random.random()
     time.sleep(random_float)
