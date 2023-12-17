@@ -1,3 +1,7 @@
+/**
+ * The BubbleSort class implements the bubble sort algorithm 
+ * to sort an array of integers in ascending order.
+ */
 import java.util.*;
 import java.io.*;
 
