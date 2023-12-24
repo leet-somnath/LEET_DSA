@@ -51,10 +51,11 @@ public class FIndkINBitonicArray {
             if (arr[mid] == k) {
                 return mid;
             } else if (arr[mid] < k) {
-                low = mid + 1; // Update low for ascending order
+                low = mid + 1;
             } else {
-                high = mid - 1; // Update high for ascending order
+                high = mid - 1; 
             }
+
         }
         return -1;
     }
@@ -95,11 +96,12 @@ public class FIndkINBitonicArray {
      * if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1]) {
      * return mid;
      * } else if (arr[mid] > arr[mid - 1] && arr[mid] < arr[mid + 1]) {
-     * l = mid; // Add 1 to l
+     * l = mid; 
      * } else {
-     * h = mid; // Subtract 1 from h
+     * h = mid;
      * }
      * } else {
+     * 
      * // Handle the case when mid is at the boundaries
      * if (mid == 0 && arr[mid] > arr[mid + 1]) {
      * return mid;

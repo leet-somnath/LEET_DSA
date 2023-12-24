@@ -11,7 +11,7 @@ Fortunately, the store sells horseshoes of all colors under the sun,
 and Valera has enough money to buy any four of them. However, 
 in order to save money, he would like to spend as little as possible. 
 Your task is to help Valera determine the minimum number of horseshoes he needs to buy to wear four horseshoes of different colors to the party.
-
+synta
 Input
 
 The first line contains four space-separated integers s1, s2, s3, s4 (1 ≤ s1, s2, s3, s4 ≤ 10^9) — 

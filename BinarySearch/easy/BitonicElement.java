@@ -1,3 +1,8 @@
+
+/*The provided code is a Java program that 
+finds the index of a bitonic element in an array.
+A bitonic element is an element that is first increasing 
+and then decreasing in the array. */
 import java.util.Scanner;
 
 public class BitonicElement {
@@ -9,7 +14,7 @@ public class BitonicElement {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        System.out.println("index is  "+ bitonic(arr));
+        System.out.println("index is  " + bitonic(arr));
         sc.close();
     }
 
@@ -21,9 +26,9 @@ public class BitonicElement {
                 if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1]) {
                     return mid;
                 } else if (arr[mid] > arr[mid - 1] && arr[mid] < arr[mid + 1]) {
-                    l = mid;  // Add 1 to l
+                    l = mid; // Add 1 to l
                 } else {
-                    h = mid;  // Subtract 1 from h
+                    h = mid; // Subtract 1 from h
                 }
             } else {
                 // Handle the case when mid is at the boundaries

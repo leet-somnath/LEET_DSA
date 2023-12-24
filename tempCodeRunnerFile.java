@@ -1,0 +1,1 @@
+a[i]=sc.nextInt();
