@@ -4,6 +4,7 @@ public class Bitmanipulation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = 10, b = 9;
+        //1.arthementic addition without operator
         int res = addtionwithoutarthemeticoperatior(a, b);
         System.out.println(res);
         // 2 binary representaion
