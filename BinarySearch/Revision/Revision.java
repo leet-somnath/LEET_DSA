@@ -28,6 +28,7 @@ import java.util.Scanner;
 public class Revision {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         int n = sc.nextInt();
         int arr[] = new int[n];
         for (int i = 0; i < n; i++) {
@@ -88,7 +89,7 @@ public class Revision {
 
     public static int upperbound(int arr[], int n) {
         int low = 0, high = arr.length - 1;
-        int ans = n;
+        int ans = -1;
         while (low <= high) {
             int mid = (low + high) / 2;
             if (arr[mid] > n) {
