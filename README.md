@@ -12,7 +12,7 @@ Note that this repo is meant to be used for learning and researching purposes on
 
 ##### **The different categories are:-**
 
-##### 1.[Arrays](https://github.com/leet-somnath/LEET_DSA/tree/main/Arrays)
+1.[Arrays](https://github.com/leet-somnath/LEET_DSA/tree/main/Arrays)
 
 **2.  [Hashmap](https://github.com/leet-somnath/LEET_DSA/tree/main/Hashmap)**
 
@@ -22,10 +22,10 @@ Note that this repo is meant to be used for learning and researching purposes on
 
 **5.  [Binary Search]()**
 
-[**6.****Bit Manipulation**](https://github.com/leet-somnath/LEET_DSA/tree/main/Bit%20manipulation)
+6.[Bit Manipulation](https://github.com/leet-somnath/LEET_DSA/tree/main/Bit%20manipulation)
 
 7.**[ArrayList](https://github.com/leet-somnath/LEET_DSA/tree/main/lists)**
 
 8.**[Recursion](https://github.com/leet-somnath/LEET_DSA/tree/main/Recursion)**
 
-9.[REVISION](https://)
+9.[REVISION](https://github.com/leet-somnath/LEET_DSA/tree/main/Revision)
