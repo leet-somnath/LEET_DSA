@@ -1,4 +1,4 @@
-> # DATA_STRUCTURE
+ # DATA_STRUCTURE
 
 ---
 
@@ -9,6 +9,7 @@ Here you can find solutions for various coding/algorithmic problems and many use
 you may find questions repeated because i have classiffed them according to the methods i have solved,for example:= u may find a problem based on array but i solved in hashmap then i saved it in both array folder as well as hashmap folder so that we can have a better classification.But if there exists more than one solution,which i may not solved by my own ,it will be under comments,they may be really optimized from my solution.By this way u can have better understanding between brute force and optimized solution for your sake as well as mine.
 
 Note that this repo is meant to be used for learning and researching purposes only and it is not meant to be used for production.
+ ###don't forget to give star,it will motivate me
 
 ##### **The different categories are:-**
 
