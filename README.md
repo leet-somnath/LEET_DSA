@@ -10,7 +10,7 @@ you may find questions repeated because i have classiffed them according to the 
 
 Note that this repo is meant to be used for learning and researching purposes only and it is not meant to be used for production.
 
-##### **The different categories are:-**
+#### **The different categories are:-**
 
 1.[Arrays](https://github.com/leet-somnath/LEET_DSA/tree/main/Arrays)
 

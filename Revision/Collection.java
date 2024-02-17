@@ -5,14 +5,14 @@ public class Collection {
         Scanner sc = new Scanner(System.in);
 
         // ArrayList
-        ArrayList<Integer> x = new ArrayList<>();
+        List<Integer> x = new ArrayList<>();
         ArrayList<Integer> y = new ArrayList<>();
         // common methods
         x.add(5);
         x.add(4);
         y.addAll(x);
         System.out.println("ArrayList y: " + y);
-
+        System.out.println(x.get(0));
         y.removeAll(x);
         System.out.println("ArrayList y after removeAll(x): " + y);
 
@@ -60,7 +60,7 @@ public class Collection {
         System.out.println("Size of HashSet z: " + z.size());
 
         //
-        LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
+        Set<Integer> linkedHashSet = new LinkedHashSet<>();
 
         // Adding elements
         linkedHashSet.add(5);
@@ -151,7 +151,7 @@ public class Collection {
 
         // Iterating over entries using entrySet
         System.out.print("Iteration using entrySet: ");
-        for (Map.Entry<String, Integer> entry : linkedHashMap.entrySet()) {
+        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
             System.out.print("(" + entry.getKey() + ", " + entry.getValue() + ") ");
         }
         System.out.println();
