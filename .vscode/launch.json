@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "LInkedInsertion",
+      "request": "launch",
+      "mainClass": "LInkedInsertion",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",

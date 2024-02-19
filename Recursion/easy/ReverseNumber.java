@@ -6,18 +6,18 @@ public class ReverseNumber {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        reverse(n);
-        System.out.println(sum);
+        
+        System.out.println(reverse(n));
         sc.close();
     }
 
     static int sum = 0;// global variable
 
-    public static void reverse(int n) {
+    public static int  reverse(int n) {
         if (n == 0)
-            return;
+            return sum;
         sum = sum * 10 + n % 10;
-        reverse(n / 10);
+      return  reverse(n / 10);
 
     }
 }
