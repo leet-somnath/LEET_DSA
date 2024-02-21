@@ -14,7 +14,7 @@ Explanation: Input doesn't contain any repeating element
  //solution-->
  
 
-package Arrays.easy;
+
 
 import java.util.HashMap;
 import java.util.Map;
