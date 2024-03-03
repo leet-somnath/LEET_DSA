@@ -12,7 +12,7 @@ Explanation: The 4th largest array element is 4
 
 */
 
-package Arrays.easy;
+
 import java.util.*;
 public class KthLargestValue {
     public static void main(String[] args) {
