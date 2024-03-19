@@ -7,7 +7,7 @@ Scanner sc=new Scanner(System.in);
         int a,b;
 a=sc.nextInt();
 b=sc.nextInt();
-System.out.println(gcd(a,b);
+gcd(a,b);
 sc.close();
     }
     public static void gcd(int a,int b)

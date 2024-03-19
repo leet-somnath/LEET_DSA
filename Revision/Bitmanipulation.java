@@ -58,7 +58,7 @@ public class Bitmanipulation {
         //
 
         sc.close();
-    }W
+    }
 
     public static int addtionwithoutarthemeticoperatior(int a, int b) {
         return ((a | b) + (a & b));

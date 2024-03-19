@@ -1,3 +1,0 @@
-**bit manipulation**
-
-**1.**

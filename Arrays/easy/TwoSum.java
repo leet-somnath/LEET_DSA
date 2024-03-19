@@ -24,27 +24,36 @@ import java.util.List;
 
 public class TwoSum {
     public static void main(String args[]) {
-        int[] nums = {5, 2, 6, 8, 1, 9};
+        ArrayList<Integer> x=new ArrayList<>();
+        x.add(2);
+        x.add(5);
+        x.add(3);
+        x.add(8);
+        x.add(5);
+        x.add(2);
+
         int target = 10;
-        List<Integer> pair = findPair(nums, target);
+        List<Integer> pair = findPair(x, target);
         System.out.println(pair);
     }
 
-    public static List<Integer> findPair(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        List<Integer> pair = new ArrayList<>();
-
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if (map.containsKey(complement)) {
-                pair.add(nums[i]);
-                pair.add(complement);
-                return pair;
-            }
-            map.put(nums[i], i);
+    public static List<Integer> findPair(ArrayList<Integer> A, int B) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i =0;i<A.size();i++){
+        if(map.containsKey(B-A.get(i))){
+        list.add(map.get(B-A.get(i)));
+        list.add(i+1);
+        break;
+        }else{
+        if(map.containsKey(A.get(i))){
+        continue;
+        }else{
+        map.put(A.get(i),i+1);
         }
-
-        return null;
+        }
+        }
+        return list;
     }
 }
 
