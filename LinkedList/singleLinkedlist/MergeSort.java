@@ -13,26 +13,17 @@ public class MergeSort {
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
             return head;
-
-        // Find the middle of the list
         ListNode slow = head;
         ListNode fast = head;
         ListNode prev = null;
-
         while (fast != null && fast.next != null) {
             prev = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
-
-        // Split the list into two halves
         prev.next = null;
-
-        // Recursively sort the two halves
         ListNode left = sortList(head);
         ListNode right = sortList(slow);
-
-        // Merge the sorted halves
         return merge(left, right);
     }
 

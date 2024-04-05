@@ -1,42 +1,26 @@
 import java.util.*;
 public class BalnacedParenthisisversion2 {
-    public int solve(String A) {
-        Deque<Character> sk = new ArrayDeque<>(); // Using Deque instead of Stack
-        if(A.length()==1)
-        {
-            return 0;
-        }
-       for(char st:A.toCharArray())
-       {
-           if(st=='(')
-           {
-               sk.push(st);
-           }  
-       
-        else if(st==')' && !sk.isEmpty())
-        {
-            sk.pop();
-         
-        }
-         else if(st==')' && sk.isEmpty())
-        {
-           return 0;
-         
-        }
-       
-       }
-       if(sk.isEmpty())
-        {
-            return 1;
-        }
-        else{
-            return 0;
-        }
-       
-       
-       
-       
-         
-     
-    }
+    
+        public static String isBalanced(String s) {
+            Deque<Character> x=new ArrayDeque<>();
+              for (int i = 0; i < s.length(); i++) {
+                  char c=s.charAt(i);
+                  if(c=='(' || c=='{' || c=='[')
+                     x.push(c);
+                  else
+                  {
+                      if(x.isEmpty()==true)
+                      return "NO";
+                      else if(balance(x.peek(), c)==false)
+                      return "NO";
+                      else
+                      x.pop();
+                  }
+              }
+              return (x.isEmpty()==true?"YES":"NO");
+          }
+           public static boolean balance(char a,char b)
+          {
+              return (a=='(' && b==')' || a=='{'&& b=='}' || a=='['&& b==']');
+          }
 }
