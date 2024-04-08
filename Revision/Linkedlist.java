@@ -90,13 +90,13 @@ public static int size(ListNode head) {
 }
 
 public static ListNode findMiddle(ListNode head) {
-    if (head == null)
-        return null;
+    if (head == null || head.next == null)
+        return head;
 
     ListNode slow = head;
     ListNode fast = head;
 
-    while (fast.next != null && fast.next.next != null) {
+    while (fast != null && fast.next != null) {
         slow = slow.next;
         fast = fast.next.next;
     }
@@ -232,20 +232,6 @@ public static ListNode[] split(ListNode head, int x) {
     return result;
 }
 
-public boolean hasCycle(ListNode head) {
-    if(head==null || head.next==null))
-    return false;
-    
-    ListNode slow=head,fast=head;
-     while (fast != null && fast.next != null) {
-        slow = slow.next;
-        fast = fast.next.next;
-        if(slow==fast)
-        return true;
-}
-return false;
-}
-
 public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
     ListNode a = headA;
     ListNode b = headB;
@@ -314,6 +300,20 @@ public static ListNode removeDuplicates(ListNode head) {
     return head;
 }
 
+public boolean hasCycle(ListNode head) {
+    if(head==null || head.next==null))
+    return false;
+    
+    ListNode slow=head,fast=head;
+     while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if(slow==fast)
+        return true;
+}
+return false;
+}
+
 public static boolean detectAndRemoveCycle(ListNode head) {
     if (head == null || head.next == null)
         return false;
@@ -349,7 +349,7 @@ public int findCycleLength(ListNode head) {
         slow = slow.next;
         fast = fast.next.next;
 
-        if (slow == fast) { 
+        if (slow == fast) {
             int length = 1;
             slow = slow.next;
 
@@ -364,28 +364,26 @@ public int findCycleLength(ListNode head) {
 
     return 0;
 }
-class Solution {
-    public ListNode rotateRight(ListNode head, int k) {
-        if (head == null || head.next == null || k == 0) {
-            return head;
-        }
-        ListNode curr = head;
-        int size = 1;
-        while (curr.next != null) {
-            size++;
-            curr = curr.next;
-        }
-        int rc = k % size;
-        curr.next = head;
-        for (int i = 0; i < size - rc; i++) {
-            curr = curr.next;
-        }
-        head = curr.next;
-        curr.next = null;
+
+public ListNode rotateRight(ListNode head, int k) {
+    if (head == null || head.next == null || k == 0) {
         return head;
     }
+    ListNode curr = head;
+    int size = 1;
+    while (curr.next != null) {
+        size++;
+        curr = curr.next;
+    }
+    int rc = k % size;
+    curr.next = head;
+    for (int i = 0; i < size - rc; i++) {
+        curr = curr.next;
+    }
+    head = curr.next;
+    curr.next = null;
+    return head;
 }
-
 
 public static ListNode reverseKGroup(ListNode head, int k) {
     if (head == null || k == 1)
@@ -423,33 +421,7 @@ private static ListNode reverse(ListNode prev, ListNode next) {
     return last;
 }
 
-public static ListNode detectIntersection(ListNode headA, ListNode headB) {
-    if (headA == null || headB == null)
-        return null;
 
-    ListNode tailA = headA;
-    while (tailA.next != null) {
-        tailA = tailA.next;
-    }
-
-    ListNode tailB = headB;
-    while (tailB.next != null) {
-        tailB = tailB.next;
-    }
-
-    if (tailA != tailB)
-        return null;
-
-    ListNode currA = headA;
-    ListNode currB = headB;
-
-    while (currA != currB) {
-        currA = currA == null ? headB : currA.next;
-        currB = currB == null ? headA : currB.next;
-    }
-
-    return currA;
-}
 
 public class Linkedlist {
     public static void main(String[] args) {
