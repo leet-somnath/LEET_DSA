@@ -1,34 +1,39 @@
 public class MaxSubArraySUMGreaterThanorEqualK {
 
-    public static int maxSubArrayLen(int target, int[] nums) {
-        int i = 0, j = 0, ans = Integer.MIN_VALUE;
-        long sum = 0;
-
+    public static int longestSubArraySum(int k, int[] nums) {
+        int maxLength = 0;
+        int sum = 0;
+        int i = 0;
+        int j = 0;
+    
         while (j < nums.length) {
             sum += nums[j];
-            if (sum >= target) {
-                while (sum >= target) {
-                    sum -= nums[i];
-                    i++;
-                }
-                i--; // Backtrack one step
-                sum += nums[i];
-                ans = Math.max(ans, j - i + 1);
+    
+            // Shrink the window from the left until sum is >= k
+            while (sum < k && i <= j) {
+                j++;
+                if(j<nums.length)
+                    sum += nums[j];
             }
-            j++;
+    
+            // Update maxLength if the current subarray length is longer
+            if (sum >= k) {
+                maxLength = Math.max(maxLength, j - i + 1);
+            }
+    
+            // Move left pointer to the right
+            sum -= nums[i];
+            i++;
         }
-
-        if (ans == Integer.MAX_VALUE) {
-            return 0;
-        } else {
-            return ans;
-        }
+    
+        return maxLength;
     }
+    
 
     public static void main(String[] args) {
         int target = 7;
         int[] nums = {2, 3, 1, 2, 4, 3};
-        int result = maxSubArrayLen(target, nums);
+        int result = longestSubArraySum(target, nums);
         System.out.println("maximal length of subarray with sum greater than or equal to " + target + " is: " + result); // Output: 2
     }
 }
