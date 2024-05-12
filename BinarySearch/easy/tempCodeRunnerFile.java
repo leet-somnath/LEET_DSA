@@ -13,23 +13,15 @@ public class BitonicElement {
         sc.close();
     }
 
-    public static int bitonic(int arr[]) {
-        int l = 0, h = arr.length - 1;
-        while (l <= h) {
-            int mid = (l + h) / 2;
-            if (mid > 0 && mid < arr.length - 1) {
-                if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1]) {
-                    return mid;
-                } else if (arr[mid] > arr[mid - 1] && arr[mid] < arr[mid + 1]) {
-                    l = mid + 1;  // Add 1 to l
-                } else {
-                    h = mid - 1;  // Subtract 1 from h
-                }
+    public static int bitonic(int[] arr, int low, int high) {
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] > arr[mid + 1]) {
+                high = mid;
             } else {
-                // Handle the case when mid is at the boundaries
-                break;
+                low = mid + 1;
             }
         }
-        return -1;
+        return low;
     }
 }

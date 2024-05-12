@@ -16,8 +16,8 @@ public class printAscending {
         if (a == -1) {
             return;
         }
-        System.out.println(n - a);
         printascending(n, a - 1);
+        System.out.println(n - a);
 
     }
 }

@@ -14,7 +14,7 @@ public class ClosestElementsOnRightSide {
 
     public static int[] closestSmallestRight(int arr[], int n) {
         Deque<Integer> stack = new ArrayDeque<>();
-        int result[] = new int[n];
+        int result[] = new int[n];+
 
         for (int i = n - 1; i >= 0; i--) {
             while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {

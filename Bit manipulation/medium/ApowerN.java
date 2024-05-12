@@ -6,10 +6,10 @@ public class ApowerN {
         Scanner sc = new Scanner(System.in);
         int a=sc.nextInt();
         int n=sc.nextInt();
-        System.out.println(pow(n,a));
+        System.out.println(pow(a,n));
         sc.close();
     }
-    public static long pow(long x,long a)
+    public static long pow(long a,long x)
     {
         long ans=1;
         long m=(long)1e9+7;
