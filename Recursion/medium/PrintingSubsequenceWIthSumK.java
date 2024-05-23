@@ -21,7 +21,7 @@ public class PrintingSubsequenceWIthSumK {
 static int c=0;
     public static void subseqgen(int[] arr, int i, int k, int sum) {
         if (i == arr.length) {
-            if (sum <= k) {
+            if (sum == k) {
                 for (Integer y : arrs)
                     System.out.print(y + " ");
                 System.out.println();
