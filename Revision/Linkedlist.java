@@ -19,8 +19,8 @@ class ListNode {
     }
 }
 
-public static ListNode insertAtBeginning(ListNode head, int data) {
-    ListNode newNode = new ListNode(data);
+public static ListNode insertAtBeginning(ListNode head, int val) {
+    ListNode newNode = new ListNode(val);
     newNode.next = head;
     return newNode;
 }
@@ -421,6 +421,36 @@ private static ListNode reverse(ListNode prev, ListNode next) {
     return last;
 }
 
+public static ListNode flatten(ListNode head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+
+    head.next = flatten(head.next);
+
+    head = merge(head, head.next);
+
+    return head;
+}
+
+private static ListNode merge(ListNode a, ListNode b) {
+    if (a == null) {
+        return b;
+    }
+    if (b == null) {
+        return a;
+    }
+
+    Node result;
+    if (a.data < b.val) {
+        result = a;
+        result.down = merge(a.down, b);
+    } else {
+        result = b;
+        result.down = merge(a, b.down);
+    }
+    return result;
+}
 
 
 public class Linkedlist {
