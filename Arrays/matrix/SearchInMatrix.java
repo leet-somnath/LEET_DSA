@@ -1,9 +1,6 @@
-
-
-
 import java.util.*;
 
-public class tUf {
+public class SearchInMatrix {
     public static boolean binarySearch(ArrayList<Integer> nums, int target) {
         int n = nums.size(); //size of the array
         int low = 0, high = n - 1;
