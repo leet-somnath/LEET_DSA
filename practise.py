@@ -1,0 +1,11 @@
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    arr=list(map(int,input().split()))
+    print(arr)
+arr.append(1)
+print(arr)
+arr.append(1)
+arr.reverse()
+print(arr)
+arr.sort()

@@ -62,6 +62,7 @@ public class Fibonnaci {
         System.out.println(optfibonaci(n));// O(N),S(1)
         sc.close();
     }
+    
 
     public static int fibonnaci(int n, int[] dp)// RECURSION
     {

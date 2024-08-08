@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.util.*;
 import java.io.*;
 
