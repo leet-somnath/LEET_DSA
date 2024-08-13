@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "LongestCompleteString",
+      "request": "launch",
+      "mainClass": "TRIE.LongestCompleteString",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
       "name": "UniqueSubsetGeneratorwithSUmToo",
       "request": "launch",
       "mainClass": "UniqueSubsetGeneratorwithSUmToo",
