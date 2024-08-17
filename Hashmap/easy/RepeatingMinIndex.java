@@ -1,6 +1,7 @@
 /*
 
-Given an integer array, find the minimum index of a repeating element in linear time and doing just a single traversal of the array.
+Given an integer array, find the minimum index of a repeating element in linear time and
+ doing just a single traversal of the array.
 
 Input : [5, 6, 3, 4, 3, 6, 4]
 Output: 1
