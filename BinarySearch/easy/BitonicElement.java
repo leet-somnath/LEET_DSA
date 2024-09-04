@@ -3,7 +3,8 @@ public static int bitonic(int[] arr, int low, int high) {
         int mid = low + (high - low) / 2;
         if (arr[mid] > arr[mid + 1]) {
             high = mid;
-        } else {
+        } else 
+        {
             low = mid + 1;
         }
     }

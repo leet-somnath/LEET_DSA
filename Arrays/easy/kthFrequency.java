@@ -1,6 +1,7 @@
 /**
  * The kthFrequency class reads an array of integers and
- *  prints the elements that occur more than n/k times, where n is the size of the array and k is a given integer.
+ *  prints the elements that occur more than n/k times,
+ *  where n is the size of the array and k is a given integer.
  */
 package Arrays.easy;
 

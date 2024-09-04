@@ -37,7 +37,7 @@ public class SortWithoutAlgorithm {
                 ++mid;
             }
         }
-         sc.close();
+        sc.close();
     }
 
     public static void swap(int[] A, int i, int j) {
@@ -45,38 +45,38 @@ public class SortWithoutAlgorithm {
         A[i] = A[j];
         A[j] = temp;
     }
-   
-}
-//my solutioh:-
-/* 
- import java.util.*;
 
-public class SortWithoutAlgorithm {
-    public static void main(String args[]){
-                Scanner sc = new Scanner(System.in);
-                       int n=sc.nextInt();
-                       int arr[]=new int[n];
-                        for(int i=0;i<n;i++){ 
-                      arr[i]=sc.nextInt();
-                 }
-                        int zero=0,one=0,two=0;
-                        for(int i=0;i<n;i++){
-                            if(arr[i]==0)
-                            zero++;
-                            else if(arr[i]==1)
-                            one++;
-                            else
-                            two++;
-                        }
-                        for(int i=0;i<n;i++){
-                            if(zero-- >0)
-                            arr[i]=0;
-                            if(zero==0 && one-- >=0)
-                            arr[i]=1;
-                            if(zero==0 && one==0 && two-- >=0)
-                            arr[i]=2;
-                        }
-                        System.out.println(Arrays.toString(arr));
-                    }       
-    }
+}
+// my solutioh:-
+/*
+ * import java.util.*;
+ * 
+ * public class SortWithoutAlgorithm {
+ * public static void main(String args[]){
+ * Scanner sc = new Scanner(System.in);
+ * int n=sc.nextInt();
+ * int arr[]=new int[n];
+ * for(int i=0;i<n;i++){
+ * arr[i]=sc.nextInt();
+ * }
+ * int zero=0,one=0,two=0;
+ * for(int i=0;i<n;i++){
+ * if(arr[i]==0)
+ * zero++;
+ * else if(arr[i]==1)
+ * one++;
+ * else
+ * two++;
+ * }
+ * for(int i=0;i<n;i++){
+ * if(zero-- >0)
+ * arr[i]=0;
+ * if(zero==0 && one-- >=0)
+ * arr[i]=1;
+ * if(zero==0 && one==0 && two-- >=0)
+ * arr[i]=2;
+ * }
+ * System.out.println(Arrays.toString(arr));
+ * }
+ * }
  */

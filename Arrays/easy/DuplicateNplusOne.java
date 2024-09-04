@@ -1,5 +1,6 @@
 /**
- * The DuplicateNplusOne class finds and returns the duplicate number in an array of integers.
+ * The DuplicateNplusOne class finds and returns
+ *  the duplicate number in an array of integers.
  */
 
 package Arrays.easy;
