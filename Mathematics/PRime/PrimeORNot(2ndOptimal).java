@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PrimeORNot(2ndOptimal) {
+public class PrimeCheck(2ndOptimal) {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

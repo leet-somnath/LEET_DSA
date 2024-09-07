@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Max",
+      "request": "launch",
+      "mainClass": "Max",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
+      "name": "Solution",
+      "request": "launch",
+      "mainClass": "Solution",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
+      "name": "PrimeFactors",
+      "request": "launch",
+      "mainClass": "PRime.PrimeFactors",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
       "name": "Rough",
       "request": "launch",
       "mainClass": "Rough.Rough",
