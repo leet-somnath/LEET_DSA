@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "E",
+      "request": "launch",
+      "mainClass": "Arrays.E",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
+      "name": "ElementSwapping",
+      "request": "launch",
+      "mainClass": "Arrays.ElementSwapping",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
       "name": "Max",
       "request": "launch",
       "mainClass": "Max",
