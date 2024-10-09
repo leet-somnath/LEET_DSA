@@ -1,8 +1,9 @@
+package grid;
 class Solution {
-    public void dfs(int[][] arr, int curr, boolean[] vis) {
-        vis[curr] = true;
-        for (int i = 0; i < arr[curr].length; i++) {
-            if (arr[curr][i] == 1 && !vis[i]) {
+    public void dfs(int[][] arr, int node, boolean[] vis) {
+        vis[node] = true;
+        for (int i = 0; i < arr[node].length; i++) {
+            if (arr[node][i] == 1 && !vis[i]) {
                 dfs(arr, i, vis);
             }
         }

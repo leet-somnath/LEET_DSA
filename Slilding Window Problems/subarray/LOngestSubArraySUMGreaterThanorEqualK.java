@@ -1,4 +1,4 @@
-public class MaxSubArraySUMGreaterThanorEqualK {
+public class LOngestSubArraySUMGreaterThanorEqualK {
 
     public static int longestSubArraySum(int k, int[] nums) {
         int maxLength = 0;

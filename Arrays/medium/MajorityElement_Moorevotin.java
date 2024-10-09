@@ -3,7 +3,7 @@
 
 import java.util.*;
 
-public class Moorevoting {
+public class MajorityElement_Moorevoting{
     public static int majorityElement(int []v) {
         //size of the given array:
         int n = v.length;

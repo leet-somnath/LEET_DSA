@@ -6,7 +6,7 @@ subarray
 
  
 */
-public class MinSubArraySUMGreaterThanorEqualK {
+public class SmallestSubArraySUMGreaterThanorEqualK {
 
     public static int minSubArraySum(int k, int[] nums) {
         int minLength = Integer.MAX_VALUE;
