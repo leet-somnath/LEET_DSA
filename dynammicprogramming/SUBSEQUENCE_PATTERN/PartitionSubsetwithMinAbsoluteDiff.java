@@ -1,7 +1,7 @@
-
 import java.util.*;
 
-public class Main {
+public class PartitionSubsetwithMinAbsoluteDiff {
+
     // Helper function to calculate the minimum absolute difference of two subsets
     static int minSubsetSumDifference(ArrayList<Integer> arr, int n) {
         int totSum = 0;
@@ -11,41 +11,36 @@ public class Main {
             totSum += arr.get(i);
         }
 
-        // Create a DP table to store subset sum information
-        boolean[][] dp = new boolean[n][totSum + 1];
-
-        // Initialize the DP table for the first row
-        for (int i = 0; i <= totSum; i++) {
-            dp[0][i] = (i == arr.get(0));
+        // Create a memoization table
+        int[][] dp = new int[n][totSum + 1];
+        for (int[] row : dp) {
+            Arrays.fill(row, -1);
         }
 
-        // Fill in the DP table using bottom-up dynamic programming
-        for (int ind = 1; ind < n; ind++) {
-            for (int target = 0; target <= totSum; target++) {
-                // Calculate if the current element is not taken
-                boolean notTaken = dp[ind - 1][target];
+        // Call the recursive function with memoization
+        return subsetSumRecursive(arr, n - 1, 0, totSum, dp);
+    }
 
-                // Calculate if the current element is taken
-                boolean taken = false;
-                if (arr.get(ind) <= target) {
-                    taken = dp[ind - 1][target - arr.get(ind)];
-                }
-
-                // Update the DP table for the current element and target sum
-                dp[ind][target] = notTaken || taken;
-            }
+    // Recursive function with memoization to find the minimum absolute difference
+    static int subsetSumRecursive(ArrayList<Integer> arr, int index, int currSum, int totSum, int[][] dp) {
+        // Base case: when no more elements are left
+        if (index < 0) {
+            return Math.abs((totSum - currSum) - currSum);
         }
 
-        int mini = Integer.MAX_VALUE;
-
-        // Find the minimum absolute difference between two subsets
-        for (int i = 0; i <= totSum; i++) {
-            if (dp[n - 1][i]) {
-                int diff = Math.abs(i - (totSum - i));
-                mini = Math.min(mini, diff);
-            }
+        // Check if this subproblem is already solved
+        if (dp[index][currSum] != -1) {
+            return dp[index][currSum];
         }
-        return mini;
+
+        // Take the current element
+        int take = subsetSumRecursive(arr, index - 1, currSum + arr.get(index), totSum, dp);
+
+        // Don't take the current element
+        int notTake = subsetSumRecursive(arr, index - 1, currSum, totSum, dp);
+
+        // Store the result in the memoization table and return the minimum difference
+        return dp[index][currSum] = Math.min(take, notTake);
     }
 
     public static void main(String[] args) {
@@ -56,4 +51,3 @@ public class Main {
         System.out.println("The minimum absolute difference is: " + minSubsetSumDifference(arr, n));
     }
 }
-

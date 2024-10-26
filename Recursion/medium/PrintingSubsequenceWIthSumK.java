@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class PrintingSubsequenceWIthSumK {
+public class PrintingSubsequenceWithSumK {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -11,17 +11,18 @@ public class PrintingSubsequenceWIthSumK {
             arr[i] = sc.nextInt();
         }
         int k = sc.nextInt();
-        System.out.println("subsequences with sum k are");
-        subseqgen(arr, 0, k,0);
-        System.out.println("total no of subsequences are "+c);
+        System.out.println("Subsequences with sum " + k + " are:");
+        subseqgen(arr, 0, k);
+        System.out.println("Total number of subsequences are " + c);
         sc.close();
     }
 
     static ArrayList<Integer> arrs = new ArrayList<>();
-static int c=0;
-    public static void subseqgen(int[] arr, int i, int k, int sum) {
+    static int c = 0;
+
+    public static void subseqgen(int[] arr, int i, int k) {
         if (i == arr.length) {
-            if (sum == k) {
+            if (k == 0) {
                 for (Integer y : arrs)
                     System.out.print(y + " ");
                 System.out.println();
@@ -30,13 +31,12 @@ static int c=0;
             return;
         }
 
-        // Include the current element
-        sum += arr[i];
+        // Include the current element and subtract it from k
         arrs.add(arr[i]);
-        subseqgen(arr, i + 1, k, sum);
-        sum -= arr[i];
-        // Exclude the current element
+        subseqgen(arr, i + 1, k - arr[i]);
+
+        // Exclude the current element and backtrack
         arrs.remove(arrs.size() - 1);
-        subseqgen(arr, i + 1, k, sum);
+        subseqgen(arr, i + 1, k);
     }
 }

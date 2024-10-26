@@ -1,5 +1,8 @@
 /*
- * Ross and Rachael are afraid of prime numbers, but they are not afraid of all prime numbers. They were afraid of only a special kind of prime numbers. They are afraid of the prime numbers (without the digit zero, they love all the primes which have digits 0 in them) that remain prime no matter how many of the leading digits are omitted. For example, they are afraid of 4632647 because it doesn't have the digit 0 and each of its truncations (632647, 32647, 2647, 647, 47, and 7) are primes.
+ * Ross and Rachael are afraid of prime numbers, but they are not afraid of all prime numbers. They were afraid of only a special kind of prime numbers.
+ *  They are afraid of the prime numbers (without the digit zero, they love all the primes which have digits 0 in them)
+ *  that remain prime no matter how many of the leading digits are omitted. For example,
+ *  they are afraid of 4632647 because it doesn't have the digit 0 and each of its truncations (632647, 32647, 2647, 647, 47, and 7) are primes.
 
 You are given a simple task, given a number of N, find out the number of primes not greater that N, that Ross and Rachael are afraid of.
 

@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "hi",
+      "request": "launch",
+      "mainClass": "hi",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
+      "name": "Rough",
+      "request": "launch",
+      "mainClass": "java.Rough",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
       "name": "E",
       "request": "launch",
       "mainClass": "Arrays.E",
