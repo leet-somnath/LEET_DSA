@@ -1,10 +1,13 @@
 /*
- * You are given two strings A and B. You are also given Q queries with 4 indices i, j, k and l. Check whether the substring of A[i:j] matches the substring of B[k:l].
+ * You are given two strings A and B. You are also given Q queries with 4 indices
+ *  i, j, k and l. Check whether the substring of A[i:j] matches the substring of B[k:l].
 
 Input Format
 
-First line of input contains T - number of test cases. In each test case, the first line contains the string A and the second line contains the string B.
-The next line contains an integer Q - the number of queries. The Q subsequent lines each contain 4 integers i, j, k and l, separated by a space.
+First line of input contains T - number of test cases. In each test case, the first
+line contains the string A and the second line contains the string B.
+The next line contains an integer Q - the number of queries. The Q subsequent lines
+ each contain 4 integers i, j, k and l, separated by a space.
 
 Constraints
 

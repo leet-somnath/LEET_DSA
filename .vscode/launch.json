@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Rough",
+      "request": "launch",
+      "mainClass": "Rough",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
       "name": "hi",
       "request": "launch",
       "mainClass": "hi",
