@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "GoodSubtree",
+      "request": "launch",
+      "mainClass": "GoodSubtree",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
+      "name": "Hii",
+      "request": "launch",
+      "mainClass": "Hii",
+      "projectName": "LEET_DSA_b1651a34"
+    },
+    {
+      "type": "java",
       "name": "Rough",
       "request": "launch",
       "mainClass": "Rough",

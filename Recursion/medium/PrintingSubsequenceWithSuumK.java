@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class PrintingSubsequenceWithSumK {
+public class PrintingSubsequenceWithSuumK {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

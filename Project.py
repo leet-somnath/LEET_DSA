@@ -1,75 +1,75 @@
-import streamlit as st
-import re
-import joblib
-from sklearn.feature_extraction.text import CountVectorizer
-# Import necessary libraries
-import pandas as pd
-import numpy as np
-import re
-from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from googletrans import Translator
+import os
 
-# Sample dataset (replace with your own dataset or download from a source like Kaggle)
-# This dataset should have at least two columns: 'review' (text) and 'sentiment' (label)
-data = pd.read_csv('movie_reviews.csv')  # Replace with your own dataset
-data.dropna(inplace=True)  # Remove rows with missing data
+def translate_text_batch(file_path, src_language='auto', dest_language='en'):
+    """
+    Translates text from a file and outputs the results to a new file.
+    
+    Parameters:
+        file_path (str): Path to the input text file.
+        src_language (str): Source language code (default is 'auto' for auto-detection).
+        dest_language (str): Target language code (default is 'en' for English).
+    """
+    # Check if the file exists
+    if not os.path.exists(file_path):
+        print("Error: File not found! Please provide a valid file path.")
+        return
+    
+    translator = Translator()
+    # Define output file name
+    output_file = file_path.replace('.txt', '_translated.txt')
+    
+    try:
+        with open(file_path, 'r', encoding='utf-8') as infile, open(output_file, 'w', encoding='utf-8') as outfile:
+            print(f"Translating content from {file_path}...")
+            for line in infile:
+                # Skip empty lines
+                if line.strip():
+                    translated = translator.translate(line.strip(), src=src_language, dest=dest_language)
+                    outfile.write(f"{translated.text}\n")
+            print(f"Translation complete! Output saved to: {output_file}")
+    except Exception as e:
+        print(f"Error during translation: {e}")
 
-# Display basic information about the dataset
-print(data.info())
-print(data.head())
+def translate_text_interactive():
+    """
+    Provides an interactive console for translating single lines of text.
+    """
+    translator = Translator()
+    print("Interactive Text Translator. Type 'exit' to quit.")
+    
+    while True:
+        # Accept user input for text
+        text = input("\nEnter text to translate (or 'exit' to quit): ")
+        if text.lower() == 'exit':
+            print("Exiting translator.")
+            break
+        
+        # Accept source and target languages
+        src_lang = input("Enter source language code (or 'auto' for detection): ").strip()
+        dest_lang = input("Enter target language code: ").strip()
+        
+        try:
+            # Translate the text
+            translated = translator.translate(text, src=src_lang, dest=dest_lang)
+            print(f"Original ({translated.src}): {text}")
+            print(f"Translated ({translated.dest}): {translated.text}")
+        except Exception as e:
+            print(f"Error during translation: {e}")
 
-
-# Load the trained model and vectorizer
-model = joblib.load('sentiment_model.pkl')
-vectorizer = joblib.load('vectorizer.pkl')
-
-# Function to preprocess and predict sentiment
-def preprocess_text(text):
-    text = re.sub(r'http\S+', '', text)  # Remove URLs
-    text = re.sub(r'[^a-zA-Z\s]', '', text)  # Remove non-alphabetic characters
-    text = text.lower()  # Convert to lowercase 1 
-    text = text.split()  # Tokenize
-    text = [word for word in text if word not in stopwords.words('english')]  # Remove stopwords
-    text = ' '.join(text)
-    return text
-
-def predict_sentiment(text):
-    text = preprocess_text(text)
-    text_vec = vectorizer.transform([text])
-    prediction = model.predict(text_vec)
-    return 'Positive' if prediction == 1 else 'Negative'
-# Define the target variable
-y = data['sentiment']  # Assuming binary sentiment (0 = Negative, 1 = Positive)
-
-# Split the data into training and testing sets (80% train, 20% test)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Train a Naive Bayes model
-model = MultinomialNB()
-model.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_pred = model.predict(X_test)
-
-# Evaluate the model performance
-print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
-print(f"Classification Report: \n{classification_report(y_test, y_pred)}")
-print(f"Confusion Matrix: \n{confusion_matrix(y_test, y_pred)}")
-
-# Streamlit Web App Interface
-st.title('Sentiment Analysis Web App')
-
-# User input box for text
-user_input = st.text_area("Enter the text to analyze sentiment:")
-
-# Prediction on button click
-if st.button("Predict"):
-    if user_input:
-        sentiment = predict_sentiment(user_input)
-        st.write(f"Predicted Sentiment: {sentiment}")
+if __name__ == "__main__":
+    print("Choose a mode for translation:")
+    print("1. Interactive Mode: Translate single sentences.")
+    print("2. Batch Mode: Translate multiple lines from a file.")
+    
+    mode = input("Enter '1' for Interactive Mode or '2' for Batch Mode: ").strip()
+    
+    if mode == '2':  # Batch Mode
+        file_path = input("Enter the full path of the text file to translate: ").strip()
+        source_lang = input("Enter source language code (or 'auto' for detection): ").strip()
+        target_lang = input("Enter target language code: ").strip()
+        translate_text_batch(file_path, src_language=source_lang, dest_language=target_lang)
+    elif mode == '1':  # Interactive Mode
+        translate_text_interactive()
     else:
-        st.write("Please enter some text.")
+        print("Invalid choice. Please restart and choose either '1' or '2'.")

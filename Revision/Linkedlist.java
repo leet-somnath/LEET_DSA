@@ -1,11 +1,22 @@
-/*
- * insertion,deletion at all points
- * reverse ll
- * merge sort ll
- * merge two sorted list
- * merge two unsorted list
- * split 
- */
+/* 
+ * ----------------------------------------------------------------------------------------------------------------
+| Data Structure       | Access    | Search    | Insertion | Deletion | Notes                                      |
+-------------------------------------------------------------------------------------------------------------------
+| Array                | O(1)      | O(n)      | O(n)      | O(n)     | Fixed size, contiguous memory |
+| Dynamic Array (      | O(1)*     | O(n)      | O(n)*     | O(n)     | *Amortized O(1) for insertion at the end |
+| Singly Linked List   | O(n)      | O(n)      | O(1)*     | O(1)*    | *If position is known |
+| Doubly Linked List   | O(n)      | O(n)      | O(1)*     | O(1)*    | Allows bidirectional traversal |
+| Stack (Array-based)  | O(1)      | O(n)      | O(1)      | O(1)     | LIFO structure |
+| Queue (Array-based)  | O(1)      | O(n)      | O(1)      | O(1)     | FIFO structure |
+| Hash Table           | O(1)      | O(1)*     | O(1)*     | O(1)*    | *Average case, O(n) in worst case |
+| Binary Search Tree   | O(log n)* | O(log n)* | O(log n)* | O(log n)*| *Balanced (e.g., AVL, Red-Black Trees) |
+| Heap                 | O(n)      | O(log n)  | O(log n)  | O(log n) | Min/Max Priority Queue |
+| Graph (Adj. List)    | O(V + E)  | O(V + E)  | O(1)*     | O(1)*    | *Depends on adjacency list updates |
+| Graph (Adj. Matrix)  | O(1)      | O(V)      | O(V^2)    | O(V^2)   | Suitable for dense graphs |
+| Trie                 | O(m)      | O(m)      | O(m)      | O(m)     | m = length of the key |
+-------------------------------------------------------------------------------------------------------------------
+
+*/
 
 import java.util.*;
 
