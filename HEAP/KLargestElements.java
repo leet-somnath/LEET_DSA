@@ -4,29 +4,26 @@ import java.util.PriorityQueue;
 
 public class KLargestElements {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5};
+        int[] arr = { 1, 2, 3, 4, 5 };
         int k = 3;
         printKLargestElements(arr, k);
     }
 
-    public static void printKLargestElements(int[] arr, int k) {
-        // Create a min-heap with initial capacity k
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>(Collections.reverseOrder());
+    public static int kthLargest(int[] arr, int k) {
+        if (arr == null || k < 1 || k > arr.length) {
+            throw new IllegalArgumentException("Invalid input");
+        }
 
-        // Add elements to the min-heap
+        // Min-heap to keep track of the largest k elements.
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int num : arr) {
-            if (minHeap.size() < k) {
-                minHeap.offer(num);
-            } else if (num > minHeap.peek()) {
+            minHeap.add(num);
+            // Ensure the heap size doesn't exceed k.
+            if (minHeap.size() > k) {
                 minHeap.poll();
-                minHeap.offer(num);
             }
         }
-System.out.println("kth largest is "+minHeap.peek());
-        // Print the k largest elements
-        System.out.println("The " + k + " largest elements are:");
-        while (!minHeap.isEmpty()) {
-            System.out.print(minHeap.poll() + " ");
-        }
+        return minHeap.peek();
     }
+
 }
